@@ -32,6 +32,11 @@ const userSchema = new Schema<TUser>(
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+      enum: ["manager", "user"],
+      required: true,
+    },
   },
   {
     timestamps: true,

@@ -8,6 +8,7 @@ const createUserZodSchema = z.object({
       lastName: z.string().min(1, "Last name is required"),
     }),
     contactNo: z.string().min(10, "Contact number must be at least 10 digits"),
+    role: z.enum(["manager", "user"] as const).default("user"),
   }),
 });
 
