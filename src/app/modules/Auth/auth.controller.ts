@@ -23,7 +23,18 @@ const login = catchAsync(async (req: Request, res: Response) => {
     },
   });
 });
+const refreshToken = catchAsync(async (req: Request, res: Response) => {
+  const result = await AuthServices.refreshToken(req.cookies.refreshToken);
+  console.log(result);
+  sendResponse(res, {
+    statusCode: StatusCodes.OK,
+    success: true,
+    message: "Access token is retrieved successfully",
+    data: result,
+  });
+});
 
 export const AuthControllers = {
   login,
+  refreshToken,
 };
