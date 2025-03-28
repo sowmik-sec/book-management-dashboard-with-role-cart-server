@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import catchAsync from "../../utils/catchAsync";
-import { BookServices } from "./book.service";
 import sendResponse from "../../utils/sendResponse";
 import { StatusCodes } from "http-status-codes";
 import AppError from "../../errors/AppError";
